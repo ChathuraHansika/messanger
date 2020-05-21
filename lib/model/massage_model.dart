@@ -17,10 +17,10 @@ class Message {
 }
 
 final User currentUser = User(id: 0, name: 'chathura', imageUrl: 'images/1.jpg');
-final User smith = User(id: 1, name: 'chathura', imageUrl: 'images/2.jpg');
-final User john = User(id: 2, name: 'chathura', imageUrl: 'images/3.jpg');
-final User william = User(id: 3, name: 'chathura', imageUrl: 'images/4.jpg');
-final User martin = User(id: 4, name: 'chathura', imageUrl: 'images/5.jpg');
+final User smith = User(id: 1, name: 'smith', imageUrl: 'images/2.jpg');
+final User john = User(id: 2, name: 'john', imageUrl: 'images/3.jpg');
+final User william = User(id: 3, name: 'william', imageUrl: 'images/4.jpg');
+final User martin = User(id: 4, name: 'martin', imageUrl: 'images/5.jpg');
 
 List<User> favourites=[currentUser,smith,john,william,martin];
 
