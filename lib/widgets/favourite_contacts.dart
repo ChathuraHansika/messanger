@@ -34,15 +34,23 @@ class FavouriteContacts extends StatelessWidget {
               padding: EdgeInsets.only(left: 20.0),
               scrollDirection: Axis.horizontal,
               itemCount: favourites.length,
-              itemBuilder: (BuildContext contect, int index) {
-                return Column(
-                  children: <Widget>[
-                    CircleAvatar(
-                      radius: 35.0,
-                      backgroundImage: AssetImage(favourites[index].imageUrl),
-                    ),
-                    Text(favourites[index].name),
-                  ],
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding:  EdgeInsets.all(8.0),
+                  child: Column(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage: AssetImage(favourites[index].imageUrl),
+                      ),
+                        SizedBox(
+                          height: 6.0,
+                        ),
+                      Text(favourites[index].name,style: TextStyle(
+                        color: Colors.blueGrey
+                      ),),
+                    ],
+                  ),
                 );
               }),
         )
