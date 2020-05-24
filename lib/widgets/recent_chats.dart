@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:messanger/model/massage_model.dart';
 
@@ -24,7 +25,15 @@ class _RecentChatsState extends State<RecentChats> {
               itemBuilder: (BuildContext context, int index) {
                 final Message chat = chats[index];
                 return Container(
-                  margin:EdgeInsets.only(top:5.0,bottom: 5.0,right: 20.0),
+                  margin: EdgeInsets.only(top: 5.0, bottom: 5.0, right: 20.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  decoration: BoxDecoration(
+                      color: chat.unread ? Color(0xFFFFEFEE) : Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      )),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -64,7 +73,32 @@ class _RecentChatsState extends State<RecentChats> {
                         ],
                       ),
                       Column(
-                        children: <Widget>[Text(chat.time), Text('NEW')],
+                        children: <Widget>[
+                          Text(
+                            chat.time,
+                            style: TextStyle(
+                                color: Colors.blueGrey,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          chat.unread?Container(
+                            width: 40.0,
+                            height: 20.0,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              'NEW',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ):Text('')
+                        ],
                       )
                     ],
                   ),
